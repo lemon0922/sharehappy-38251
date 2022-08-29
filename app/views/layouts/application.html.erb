@@ -11,8 +11,9 @@
     <link href="/your-path-to-fontawesome/css/all.css" rel="stylesheet">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_pack_tag 'application' %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <!-- Google fonts-->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Zen+Maru+Gothic:wght@400;700&display=swap" rel="stylesheet" type="text/css" />
   </head>
