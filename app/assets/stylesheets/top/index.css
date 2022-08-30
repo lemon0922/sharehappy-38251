@@ -1,13 +1,5 @@
-header {
-  width: 100%;
-  height: 10vh;
-  background-color: black;
-}
-
-.logo {
-  width: 10vw;
-  height: 10vh;
-  margin-left: 30px;
+.header-top {
+  margin-bottom: 0;
 }
 
 .top_main {
@@ -15,10 +7,10 @@ header {
   padding: 0;
   width: 100%;
   height: 90vh;
-  background-image: url('top_image.jpg');
-  background-position: center center;
+  background-image: url('top_image.png');
+  background-position: top 25% center;
   background-size: cover;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.4);
   background-blend-mode: darken;
 }
 
@@ -32,10 +24,11 @@ header {
 }
 
 .top_title {
-  color: white;
+  color: #FFFFFF;
+  font-weight: 600;
   font-family: 'Zen Maru Gothic', sans-serif;
   font-size: 80px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .top_nav {
@@ -51,27 +44,5 @@ header {
 }
 
 .button {
-  display: inline-block;
-  text-decoration: none;
-  font-family: 'Zen Maru Gothic', sans-serif;
-  font-size: 20px;
-  color: #DCAB17;
-  margin-left: 50px;
-  padding: 16px 40px;
-  border: 1px solid #DCAB17;
-  border-radius: 30px;
-}
-.button::before {
-  content: "";
-  margin-left: 16px;
-}
-.button::after {
-  content: ">";
-  margin-left: 0px;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-.button:hover::after {
-  margin-left: 20px;
-  opacity: 1;
+  margin: 0 50px;
 }
