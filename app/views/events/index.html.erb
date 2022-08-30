@@ -1,13 +1,17 @@
-<%= link_to '予定を追加する', new_event_path %>
+<%= render "shared/header" %>
+ 
+<div class="main">
+  <%= link_to '予定を追加する', new_event_path %>
 
-<%= month_calendar events: @events do |date, events| %>
+  <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
-  <% events.each do |event| %>
-    <div>
-      <%= link_to event.title, event %>
-    </div>
+    <% events.each do |event| %>
+      <div>
+        <%= link_to event.title, event %>
+      </div>
+    <% end %>
   <% end %>
-<% end %>
+</div>
 
 <%= render "shared/footer" %>
