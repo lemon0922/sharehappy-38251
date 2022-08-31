@@ -1,8 +1,13 @@
 .share-header {
   margin-bottom: 70px;
 }
+
 .header-top {
   margin-bottom: 5px;
+}
+
+.title {
+  color: #3BA454;
 }
 
 .serch-area {
