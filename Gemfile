@@ -57,3 +57,4 @@ group :development do
   gem 'rubocop', require: false
 end
 gem 'simple_calendar', '~> 2.0'
+gem 'rails-i18n'
