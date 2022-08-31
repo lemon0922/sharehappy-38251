@@ -17,3 +17,5 @@ module Sharehappy38251
     # the framework and any gems in your application.
   end
 end
+
+config.beginning_of_week = :sunday
