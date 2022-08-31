@@ -9,6 +9,9 @@
 .title {
   color: #3BA454;
 }
+.title:hover {
+  color: #3BA454;
+}
 
 .serch-area {
   display: flex;
