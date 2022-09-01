@@ -1,0 +1,31 @@
+<%= render "shared/third-header" %>
+
+<%= form_with model: @user, url: new_user_session_path, class: 'form-main', local: true do |f| %>
+<div class='form-signin w-100 m-auto text-center'>
+  <div class='form-header text-center'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" fill="currentColor" class="bi bi-person-circle signin-icon" viewBox="0 0 16 16">
+      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+      <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"/>
+    </svg>
+    <h1 class='h3 mt-2 mb-4 fs-1 fw-bolder text-success form-header-text'>Welcome</h1>
+  </div>
+  
+  <div class='login-flash-message'>
+    <%= flash[:notice] %>
+    <%= flash[:alert] %>
+  </div>
+  <div class="form-floating">
+    <%= f.email_field :email, class:"form-control rounded-0 rounded-top form-email", id:"email", placeholder:"メールアドレス", autofocus: true, autocomplete: "email" %>
+    <label for="floatingInput">メールアドレス</label>
+  </div>
+  <div class="form-floating">
+    <%= f.password_field :password, class:"form-control mb-4 rounded-0 rounded-bottom", id:"floatingPassword", placeholder:"パスワード", autocomplete: "password" %>
+    <label for="floatingPassword">パスワード</label>
+  </div>
+  <div class='login-btn'>
+    <%= f.submit "ログイン" ,class:"w-100 btn btn-lg btn-success" %>
+  </div>
+</div>
+<% end %>
+
+<%= render "shared/footer" %>
