@@ -1,6 +1,6 @@
 <%= render "shared/header" %>
  
-<div class="main">
+<div class="main px-5 ">
   <%= link_to '予定を追加する', new_event_path %>
 
   <%= month_calendar events: @events do |date, events| %>

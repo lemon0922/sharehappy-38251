@@ -1,12 +1,14 @@
 <div class="simple-calendar">
-  <div class="calendar-heading">
-    <%= link_to t('simple_calendar.previous', default: '<<先月'), calendar.url_for_previous_view %>
-    <span class="calendar-title"><%= start_date.year %>年 <%= t('date.month_names')[start_date.month] %></span>
-    <%= link_to t('simple_calendar.next', default: '翌月>>'), calendar.url_for_next_view %>
+  <div class="calendar-heading mb-5 d-flex justify-content-center align-items-center position-relative">
+    <span class="calendar-title fs-1 font-monospace position-absolute"><%= start_date.year %>年  <%= t('date.month_names')[start_date.month] %></span>
+    <div class="text-end position-absolute end-0">
+      <%= link_to t('simple_calendar.previous', default: '◀︎ 前月'), calendar.url_for_previous_view, class:'fs-4 text-decoration-none text-success p-1 me-2 border border-success rounded' %>
+      <%= link_to t('simple_calendar.next', default: '翌月 ▶︎'), calendar.url_for_next_view, class:'fs-4 text-decoration-none text-success border p-1 border-success rounded' %>
+    </div>
   </div>
 
   <table class="table">
-    <thead>
+    <thead class=>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
           <th><%= t('date.abbr_day_names')[day.wday] %></th>

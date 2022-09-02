@@ -1,4 +1,29 @@
-<%= render "shared/third-header" %>
+<header class="share-header">
+  <div class="px-3 py-2 text-bg-dark header-top">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href= '/' class="h1 d-flex align-items-center my-2 my-lg-0 me-lg-auto text-success text-decoration-none">
+          ShareHappy
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-calendar3 logo-icon" viewBox="0 0 16 16">
+            <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
+            <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
+          </svg>
+        </a>
+
+        <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
+          <li>
+            <a href='/users/sign_in' class="nav-link text-white">
+              <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi d-block mx-auto mb-1" viewBox="0 0 16 16">
+                <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2zM3 8a1 1 0 0 0-1 1v5a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V9a1 1 0 0 0-1-1H3z"/>
+              </svg>
+              ログイン
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
 <%= form_with model: @user, url: new_user_registration_path, class:'form-main', local: true do |f| %>
   <div class='form-signin w-100 m-auto text-center'>
@@ -11,7 +36,7 @@
     </div>
   
     <div class="form-floating">
-      <%= f.text_area :nickname, class:"form-control rounded-0 rounded-top form-nickname", id:"nickname", placeholder:"ニックネーム", autofocus: true %>
+      <%= f.text_field :nickname, class:"form-control rounded-0 rounded-top form-nickname", id:"nickname", placeholder:"ニックネーム", autofocus: true %>
       <label for="floatingInput">ニックネーム</label>
     </div>
     <div class="form-floating">
