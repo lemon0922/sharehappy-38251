@@ -1,8 +1,6 @@
 <%= render "shared/header" %>
  
-<div class="main px-5 mx-5">
-  <%= link_to '予定を追加する', new_event_path %>
-
+<div class="main d-flex align-items-center">
   <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
