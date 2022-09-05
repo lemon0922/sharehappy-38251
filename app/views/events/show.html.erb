@@ -9,27 +9,27 @@
     </svg>
     イベント情報
   </h3>
+  
   <% if user_signed_in? && current_user.id == @event.user_id %> 
-  <div class="event-manage d-flex justify-content-center fs-5" >
+  <div class='event-manage d-flex justify-content-center fs-5' >
     <%= link_to '編集する', edit_event_path(@event), method: :get, class:'text-primary text-decoration-none' %>
     <p class='fs-5 text-dark text-center mx-3'>or</p>
     <%= link_to '削除する', event_path(@event.id), method: :delete, class:'text-danger text-decoration-none' %>
   </div>
   <% end %>
-  <div class="event-title d-flex fs-5 border-bottom mb-3">
+  <div class='d-flex fs-5 border-bottom mb-3'>
     <p class='text-secondary'>タイトル ：  </p>
     <p><%= @event.title %></p>
   </div>
-  <div class='event-start-time d-flex fs-5 border-bottom mb-3'>
+  <div class='d-flex fs-5 border-bottom mb-3'>
     <p class='text-secondary'>時間 ：  </p>
-    <p><%= @event.start_time.strftime("%m月 %d日　%H:%M ~") %></p>
+    <p><%= @event.start_time.strftime('%m月 %d日　%H:%M ~') %></p>
   </div>
-  <% if @event.content = nil %>
-  <div class='event-content d-flex fs-5 border-bottom mb-3'>
+  <div class='d-flex fs-5 border-bottom mb-3'>
     <p class='text-secondary'>内容 ：  </p>
     <p><%= @event.content %></p>
   </div>
-  <% end %>
+
   <div class='d-flex justify-content-center mt-5 mb-3'>
     <%= link_to 'もどる', events_path, class:'btn btn-outline-secondary fs-5 rounded-pill' %>
   </div> 
