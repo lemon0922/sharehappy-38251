@@ -1,24 +1,39 @@
 <%= render "shared/header" %>
 
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>タイトル</strong>
-  <%= @event.title %>
-</p>
-
-<p>
-  <strong>時間</strong>
-  <%= @event.start_time.strftime("%Y-%m-%d") %>
-</p>
-
-<p>
-  <strong>内容</strong>
-  <%= @event.content %>
-</p>
-
-<%= link_to '編集', edit_event_path(@event) %>
-<%= link_to '削除', event_path(@event.id), method: :delete %>
-<%= link_to '戻る', events_path %>
+<%# 予定詳細 %>
+<div class='container w-25 bg-light justify-content-center align-items-center p-4 mx-auto border border-2 shadow p-3 m-5 bg-body rounded'>
+  <h3 class='h3 text-center my-4 text-success'>
+    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-calendar-check pb-1" viewBox="0 0 16 16">
+      <path d="M10.854 7.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7.5 9.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
+      <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+    </svg>
+    イベント情報
+  </h3>
+  <% if user_signed_in? && current_user.id == @event.user_id %> 
+  <div class="event-manage d-flex justify-content-center fs-5" >
+    <%= link_to '編集する', edit_event_path(@event), method: :get, class:'text-primary text-decoration-none' %>
+    <p class='fs-5 text-dark text-center mx-3'>or</p>
+    <%= link_to '削除する', event_path(@event.id), method: :delete, class:'text-danger text-decoration-none' %>
+  </div>
+  <% end %>
+  <div class="event-title d-flex fs-5 border-bottom mb-3">
+    <p class='text-secondary'>タイトル ：  </p>
+    <p><%= @event.title %></p>
+  </div>
+  <div class='event-start-time d-flex fs-5 border-bottom mb-3'>
+    <p class='text-secondary'>時間 ：  </p>
+    <p><%= @event.start_time.strftime("%m月 %d日　%H:%M ~") %></p>
+  </div>
+  <% if @event.content = nil %>
+  <div class='event-content d-flex fs-5 border-bottom mb-3'>
+    <p class='text-secondary'>内容 ：  </p>
+    <p><%= @event.content %></p>
+  </div>
+  <% end %>
+  <div class='d-flex justify-content-center mt-5 mb-3'>
+    <%= link_to 'もどる', events_path, class:'btn btn-outline-secondary fs-5 rounded-pill' %>
+  </div> 
+</div>
+<%# /予定詳細 %>
 
 <%= render "shared/footer" %>
