@@ -1,6 +1,6 @@
-<div class="simple-calendar">
+<div class="simple-calendar mx-5 mt-5">
   <div class="calendar-heading mb-5 d-flex justify-content-center align-items-center position-relative">
-    <span class="calendar-title fs-1 font-monospace position-absolute"><%= start_date.year %>年  <%= t('date.month_names')[start_date.month] %></span>
+    <span class="calendar-title fs-1 font-monospace position-absolute fw-bold"><%= start_date.year %>年  <%= t('date.month_names')[start_date.month] %></span>
     <div class="text-end position-absolute end-0">
       <%= link_to t('simple_calendar.previous', default: '◀︎ 前月'), calendar.url_for_previous_view, class:'fs-4 text-decoration-none text-success p-1 me-2 border border-success rounded' %>
       <%= link_to t('simple_calendar.next', default: '翌月 ▶︎'), calendar.url_for_next_view, class:'fs-4 text-decoration-none text-success border p-1 border-success rounded' %>
@@ -8,15 +8,15 @@
   </div>
 
   <table class="table">
-    <thead class=>
+    <thead>
       <tr>
         <% date_range.slice(0, 7).each do |day| %>
-          <th><%= t('date.abbr_day_names')[day.wday] %></th>
+          <th class='text-center p-2'><%= t('date.abbr_day_names')[day.wday] %></th>
         <% end %>
       </tr>
     </thead>
 
-    <tbody>
+    <tbody class='p-5'>
       <% date_range.each_slice(7) do |week| %>
         <tr>
           <% week.each do |day| %>
