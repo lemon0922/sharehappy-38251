@@ -8,7 +8,7 @@ class EventsController < ApplicationController
   end
 
   def create
-    @event = Event.new(events_params)
+    @event = Event.new(event_params)
     if @event.save
       redirect_to events_path
     else
@@ -26,7 +26,7 @@ class EventsController < ApplicationController
 
   def update
     event = Event.find(params[:id])
-    if event.update(events_params)
+    if event.update(event_params)
       redirect_to events_path
     else
       render :edit
@@ -40,8 +40,8 @@ class EventsController < ApplicationController
   end
 
   private
-  def events_params
-    params.require(:event).permit(:title, :content, :start_time).merge(user_id: current_user.id)
+  def event_params
+    params.require(:event).permit(:title, :start_time, :content).merge(user_id: current_user.id)
   end
 
 end
