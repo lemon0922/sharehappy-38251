@@ -7,18 +7,10 @@
 }
 
 .title {
-  color: #2F8754;
+  color: #2F8654;
 }
 .title:hover {
-  color: #3BA454;
-}
-
-.serch-area {
-  display: flex;
-}
-
-.bi-search {
-  padding-top: 5px;
+  color: #2F8654;
 }
 
 .logo-icon {
