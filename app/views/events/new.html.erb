@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
 
+<%# 新規作成 %>
 <div class='w-25 bg-light justify-content-center align-items-center p-4 mx-auto border border-2 shadow p-3 m-5 bg-body rounded'>
   <h3 class='h3 text-center my-4 text-secondary'>新規イベント</h3>
   <%= form_with(model: @event, local: true) do |f| %>
@@ -17,9 +18,10 @@
 
     <div class="submit d-flex justify-content-evenly mb-4">
       <%= f.submit '追加する', class: 'btn btn-outline-success btn-lg' %>
-      <%=link_to 'もどる', events_path, class:"btn btn-outline-success btn-lg"%>
+      <%=link_to 'もどる', events_path, class:"btn btn-outline-secondary btn-lg"%>
     </div>
   <% end %>
 </div>
+<%# /新規作成 %>
 
 <%= render "shared/footer" %>
