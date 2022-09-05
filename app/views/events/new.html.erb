@@ -1,27 +1,25 @@
 <%= render "shared/header" %>
 
-<%= form_with(model: @event, local: true) do |form| %>
+<div class='w-25 bg-light justify-content-center align-items-center p-4 mx-auto border border-2 shadow p-3 m-5 bg-body rounded'>
+  <h3 class='h3 text-center my-4 text-secondary'>新規イベント</h3>
+  <%= form_with(model: @event, local: true) do |f| %>
+    <div class="field my-4">
+      <%= f.text_field :title, class:'form-control', placeholder: "タイトル"%>
+    </div>
 
-  <div class="event-title">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
+    <div class="field mb-4">
+      <%= f.datetime_select :start_time %>
+    </div>
 
-    <div class="time">
-    <%= form.label :start_time %>
-    <%= form.datetime_select :start_time %>
-  </div>
+    <div class="field mb-5">
+      <%= f.text_area :content, class:'form-control', placeholder: '詳細' %>
+    </div>
 
-  <div class="content">
-    <%= form.label :content %>
-    <%= form.text_field :content %>
-  </div>
-
-
-  <div class="submit">
-    <%= form.submit %>
-  </div>
-
-<% end %>
+    <div class="submit d-flex justify-content-evenly mb-4">
+      <%= f.submit '追加する', class: 'btn btn-outline-success btn-lg' %>
+      <%=link_to 'もどる', events_path, class:"btn btn-outline-success btn-lg"%>
+    </div>
+  <% end %>
+</div>
 
 <%= render "shared/footer" %>
