@@ -2,13 +2,13 @@
   <div class="px-3 py-2 text-bg-dark header-top">
     <div class="container">
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href='/events' class="h1 d-flex align-items-center my-2 my-lg-0 me-lg-auto text-decoration-none title">
+        <%= link_to events_path, class:'h1 d-flex align-items-center my-2 my-lg-0 me-lg-auto text-decoration-none title' do %>
           <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi bi-calendar3 pb-1 pe-1 logo-icon" viewBox="0 0 16 16">
             <path d="M14 0H2a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM1 3.857C1 3.384 1.448 3 2 3h12c.552 0 1 .384 1 .857v10.286c0 .473-.448.857-1 .857H2c-.552 0-1-.384-1-.857V3.857z"/>
             <path d="M6.5 7a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm-9 3a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2zm3 0a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"/>
           </svg>
           ShareHappy
-        </a>
+        <% end %>
 
         <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
           <li class='nav-link'>
@@ -28,7 +28,7 @@
             <% end %>
           </li>
           <li class='nav-link'>
-            <%= link_to user_path(current_user), class:'text-decoration-none text-white' do %>
+            <%= link_to "/users/#{current_user.id}", class:'text-decoration-none text-white' do %>
               <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" fill="currentColor" class="bi d-block mx-auto mb-1 " viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
                 <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"/>
