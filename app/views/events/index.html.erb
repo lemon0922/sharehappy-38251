@@ -6,7 +6,9 @@
 
     <% events.each do |event| %>
       <div>
-        <%= link_to event.title, event, class:'text-decoration-none text-prime' %>
+        <%= link_to event_path(event.id), class:'text-decoration-none text-success' do %>
+          <%= event.start_time.strftime('%H:%M~ ') %><%= event.title %>
+        <% end %>
       </div>
     <% end %>
   <% end %>
