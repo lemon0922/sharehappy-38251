@@ -1,4 +1,6 @@
 class EventsController < ApplicationController
+  before_action :set_event, only: [:show, :edit]
+  before_action :move_to_top, 
   def index
     @events = Event.all
   end
@@ -17,11 +19,9 @@ class EventsController < ApplicationController
   end
 
   def show
-    @event = Event.find(params[:id])
   end
 
   def edit
-    @event = Event.find(params[:id])
   end
 
   def update
@@ -43,5 +43,9 @@ class EventsController < ApplicationController
 
   def event_params
     params.require(:event).permit(:title, :start_time, :content).merge(user_id: current_user.id)
+  end
+
+  def set_event
+    @event = Event.find(params[:id])
   end
 end
