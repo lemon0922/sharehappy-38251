@@ -15,10 +15,10 @@ https://sharehappy38251.herokuapp.com/
 
 # テスト用アカウント
 
-* メールアドレス：test@test
-
-* パスワード：test00
-
+* Basic認証パスワード： 0000  
+* Basic認証ID: lemon  
+* メールアドレス：test@test  
+* パスワード：test00  
 
 # 利用方法
 
