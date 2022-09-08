@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit]
-  before_action :move_to_top, 
+  before_action :move_to_top
+
   def index
     @events = Event.all
   end
@@ -47,5 +48,11 @@ class EventsController < ApplicationController
 
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def move_to_top
+    unless user_signed_in?
+      redirect_to root_path
+    end
   end
 end
