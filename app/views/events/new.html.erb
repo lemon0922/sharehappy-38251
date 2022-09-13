@@ -12,15 +12,15 @@
     <div class="field my-4">
       <%= f.text_field :title, class:'form-control', placeholder: "タイトル"%>
     </div>
-
     <div class="field mb-4">
       <%= f.datetime_select :start_time %>
     </div>
-
+    <div class="field mb-4">
+      <%= f.datetime_select :end_time %>
+    </div>
     <div class="field mb-5">
       <%= f.text_area :content, class:'form-control', placeholder: '内容' %>
     </div>
-
     <div class="submit d-flex justify-content-evenly mb-4">
       <%= f.submit '追加する', class: 'btn btn-outline-success btn-lg rounded-pill' %>
       <%=link_to 'もどる', events_path, class:"btn btn-outline-secondary btn-lg rounded-pill"%>

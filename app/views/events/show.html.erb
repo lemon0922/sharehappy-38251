@@ -23,13 +23,12 @@
   </div>
   <div class='d-flex fs-5 border-bottom mb-3'>
     <p class='text-secondary'>時間 ：  </p>
-    <p><%= @event.start_time.strftime('%m月 %d日　%H:%M ~') %></p>
+    <p><%= @event.start_time.strftime('%m月 %d日 %H:%M') %> ~ <%= @event.end_time.strftime('%m月 %d日 %H:%M') %></p>
   </div>
   <div class='d-flex fs-5 border-bottom mb-3'>
     <p class='text-secondary'>内容 ：  </p>
     <p><%= @event.content %></p>
   </div>
-
   <div class='d-flex justify-content-center mt-5 mb-3'>
     <%= link_to 'もどる', events_path, class:'btn btn-outline-secondary fs-5 rounded-pill' %>
   </div> 
