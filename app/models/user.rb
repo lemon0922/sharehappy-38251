@@ -7,4 +7,5 @@ class User < ApplicationRecord
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/, message: '半角英数字を使用してください' }
 
   has_many :events
+  has_many :messages
 end
