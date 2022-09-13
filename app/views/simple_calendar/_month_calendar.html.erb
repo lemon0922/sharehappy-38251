@@ -1,5 +1,5 @@
 <div class="simple-calendar m-auto  mt-5 w-75">
-  <div class="calendar-heading mb-5 d-flex justify-content-center align-items-center position-relative">
+  <div class="calendar-heading my-5 d-flex justify-content-center align-items-center position-relative">
     <span class="calendar-title my-5 fs-1 font-monospace position-absolute fw-bold"><%= start_date.year %>年  <%= t('date.month_names')[start_date.month] %></span>
     <div class="text-end position-absolute end-0">
       <%= link_to t('simple_calendar.previous', default: '◀︎ 前月'), calendar.url_for_previous_view, class:'btn btn-outline-success text-decoration-none me-2 mt-3' %>

@@ -1,5 +1,6 @@
 <%= render "shared/header" %>
  
+<%# メイン画面 %>
 <div class="main d-flex align-items-center">
   <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
@@ -13,5 +14,6 @@
     <% end %>
   <% end %>
 </div>
+<%# /メイン画面 %>
 
 <%= render "shared/footer" %>
