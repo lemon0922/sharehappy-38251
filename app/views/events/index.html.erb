@@ -1,7 +1,7 @@
 <%= render "shared/header" %>
  
 <%# メイン画面 %>
-<div class="main d-flex align-items-center">
+<div class="main w-100 h-100 d-flex align-items-center">
   <%= month_calendar events: @events do |date, events| %>
   <%= date.day %>
 
