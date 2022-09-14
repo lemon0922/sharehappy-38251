@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'tops#index'
   resources :events
-  resources :users, only: :show
+  resources :users,    only: :show
+  resources :messages, only: [:index, :create]
 
   devise_scope :user do
     get 'signin' => 'devise_token_auth/sessions#new'

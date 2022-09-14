@@ -1,0 +1,29 @@
+<%= render "shared/header" %>
+
+<%# チャット機能 %>
+<div class='chat_main d-flex justify-content-center align-items-center'>
+  <div class='w-25'>
+    <%= week_calendar(number_of_weeks: 2) do |date| %>
+      <%= date %>
+    <% end %>
+  </div>
+
+  <div class='messages w-50 h-100 d-flex flex-column'>
+    <div class='mx-5 my-3 h-100'>
+      <%= render partial: 'message', collection: @messages %>
+    </div>
+    <%= form_with model: [@message], class:'border-top mx-5 mb-4 pt-3 d-flex', local: true do |f| %>
+      <div class='w-100 m-auto'>
+        <%= f.text_field :content, class: 'form-control rounded-3', placeholder:'メッセージを入力' %>
+      </div>
+      <%= button_tag type:'submit', class:'pe-2 btn btn-default border-0' do %>
+        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi text-success" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89.471-1.178-1.178.471L5.93 9.363l.338.215a.5.5 0 0 1 .154.154l.215.338 7.494-7.494Z"/>
+        </svg>
+      <% end %>
+    <% end %>
+  </div>
+</div>
+<%# /チャット機能 %>
+
+<%= render "shared/footer" %>
