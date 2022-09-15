@@ -5,3 +5,10 @@
 .lower-message {
   border-radius: 12px;
 }
+
+.messages {
+  height: calc(100vh - 220px);
+}
+.message {
+  overflow: scroll;
+}
