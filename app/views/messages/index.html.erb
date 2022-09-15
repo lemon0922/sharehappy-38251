@@ -1,15 +1,15 @@
 <%= render "shared/header" %>
 
 <%# チャット機能 %>
-<div class='chat_main d-flex justify-content-center align-items-center'>
-  <div class='w-25'>
+<div class='chat_main m-auto clo-sm-8 d-flex justify-content-evenly align-items-center'>
+  <div class='col-sm-2'>
     <%= week_calendar(number_of_weeks: 2) do |date| %>
       <%= date %>
     <% end %>
   </div>
 
-  <div class='messages w-50 h-100 d-flex flex-column'>
-    <div class='mx-5 my-3 h-100'>
+  <div class='messages col-sm-5 d-flex flex-column justify-content-between border rounded-2'>
+    <div class='message m-3'>
       <%= render partial: 'message', collection: @messages %>
     </div>
     <%= form_with model: [@message], class:'border-top mx-5 mb-4 pt-3 d-flex', local: true do |f| %>
